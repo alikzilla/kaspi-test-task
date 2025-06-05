@@ -8,7 +8,7 @@ interface NavItemProps {
 const navItems: NavItemProps[] = [
   {
     title: "Магазин",
-    url: "/",
+    url: "/shop",
   },
   {
     title: "Счета",
@@ -39,7 +39,7 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
   return (
     <button
       className={`py-3 px-[18px] flex items-center justify-center ${
-        location.pathname === item.url
+        location.pathname.startsWith(item.url)
           ? "text-red-500 border-b-2 border-red-500"
           : "text-gray-500"
       }`}
