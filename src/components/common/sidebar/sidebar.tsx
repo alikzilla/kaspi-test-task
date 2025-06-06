@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
-import shevronDownSvg from "../../../assets/images/shevron-down.svg";
+import { shevronDown } from "../../../assets/icons";
 
 interface NavItemProps {
   title: string;
@@ -46,7 +46,7 @@ const Sidebar = () => {
     <aside className="w-[200px] flex flex-col items-start justify-start gap-8">
       <h1 className="flex items-center gap-2 font-bold">
         <span>ИП LIVERPOOL</span>
-        <img src={shevronDownSvg} alt="shevron down" />
+        <img src={shevronDown} alt="shevron down" />
       </h1>
 
       <nav className="flex flex-col items-start justify-start gap-5">

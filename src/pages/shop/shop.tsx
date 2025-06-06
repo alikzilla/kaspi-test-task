@@ -1,21 +1,56 @@
-import { Badge, Card } from "../../components/ui";
-import starHalfSvg from "../../assets/images/star-half.svg";
-import percent from "../../assets/images/percent.svg";
+import React, { useEffect, useState } from "react";
+import { Badge, Button, Card, Input, OrderItem } from "../../components/ui";
+
+import { percent, settings, starHalf } from "../../assets/icons";
+import { Order } from "../../core/types/order";
 
 const Shop = () => {
+  const [orderNumber, setOrderNumber] = useState<string | undefined>();
+
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/data/orders.json")
+      .then((res) => res.json())
+      .then((data: Order[]) => {
+        setOrders(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Ошибка при загрузке заказов", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Загрузка...</p>;
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("Click");
+  };
+
+  const handleOrderNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrderNumber(e.target.value);
+  };
+
   return (
     <section className="flex flex-col gap-5">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="w-[250px] flex flex-col items-start justify-start gap-[18px]">
-          <h2 className="font-bold">Магазин</h2>
+          <div className="w-full flex items-center justify-between">
+            <h2 className="font-bold">Магазин</h2>
+            <Button variant="icon" onClick={() => handleClick}>
+              <img src={settings} alt="settings icon" />
+            </Button>
+          </div>
           <div className="w-full flex items-center justify-between">
             <p className="font-medium">ИП Liverpool</p>
-            <Badge title="Активен" status="OK" />
+            <Badge title="Активен" type="OK" />
           </div>
 
           <div className="w-full flex items-center justify-between">
             <p className="font-medium">Касса</p>
-            <Badge title="Подключена" status="OK" />
+            <Badge title="Подключена" type="OK" />
           </div>
         </Card>
 
@@ -26,7 +61,7 @@ const Shop = () => {
             <div className="flex flex-col items-start justify-start gap-2">
               <div className="flex items-start gap-[2px]">
                 <span className="text-xl font-bold">4.5</span>
-                <img src={starHalfSvg} alt="Half of star" />
+                <img src={starHalf} alt="Half of star" />
               </div>
               <p className="text-sm text-gray-600 mb-2">144 оценок</p>
             </div>
@@ -56,20 +91,26 @@ const Shop = () => {
 
         <div className="mb-4">
           <div className="relative w-full">
-            <input
+            <Input
               type="text"
-              placeholder="412345678"
-              className="w-full pl-10 pr-4 py-2 border rounded bg-gray-100 focus:outline-none focus:ring"
+              placeholder="Введите номер заказа"
+              onChange={handleOrderNumber}
             />
           </div>
         </div>
 
-        <div className="pt-4">
-          <p className="text-sm font-medium mb-1">
-            Advanti T02-C03 универсальный красный, черный
-          </p>
-          <Badge title="Выдан" status="OK" />
-        </div>
+        {loading ? (
+          <p>Загрузка</p>
+        ) : (
+          orders.map((order, index) => (
+            <OrderItem
+              key={index}
+              orderNumber={order.orderNumber}
+              items={order.items}
+              status={order.status}
+            />
+          ))
+        )}
       </Card>
     </section>
   );
