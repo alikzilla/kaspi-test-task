@@ -1,7 +1,7 @@
 {
   "name": "kaspi-test-task",
   "version": "0.1.0",
-  "homepage": "https://alikzilla.github.io/kaspi-test-task",
+  "homepage": "https://alikzilla.github.io/kaspi-test-task/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

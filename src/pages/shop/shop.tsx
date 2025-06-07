@@ -10,7 +10,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/orders.json")
+    fetch(`${process.env.PUBLIC_URL}/data/orders.json`)
       .then((res) => res.json())
       .then((data: Order[]) => {
         setOrders(data);
