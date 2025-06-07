@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button, Card } from "../../ui";
 import Navbar from "../navbar/navbar";
 
@@ -7,18 +8,20 @@ import LanguageSelector from "../language-selector/language-selector";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+
   const handleClick = () => console.log("Click");
 
   return (
     <header>
       <section className="w-full relative bg-[#F2F2F2] px-4 pt-4 md:px-10 md:py-6 flex flex-col md:flex-row items-start justify-between gap-4">
         <div className="md:hidden w-full mb-2 flex justify-between items-center">
-          <h2 className="font-bold text-lg">Профиль</h2>
+          <h2 className="font-bold text-lg">{t("header.profile")}</h2>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex items-center gap-1 text-blue-600 text-sm font-medium"
           >
-            {isOpen ? "Скрыть" : "Показать"}
+            {isOpen ? t("header.hide") : t("header.show")}
           </button>
         </div>
 
@@ -39,11 +42,11 @@ const Header = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 text-sm text-[#757575]">
-              <p>18.04.1994, 30 лет</p>
-              <p>Алматы</p>
+              <p>{t("header.birthday")}</p>
+              <p>{t("header.city")}</p>
               <p className="flex items-center gap-1">
                 <img src={unavailable} alt="unavailable" />
-                Неактивен
+                {t("header.status")}
               </p>
             </div>
           </Card>
@@ -51,10 +54,12 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
             <Button variant="secondary" onClick={handleClick}>
               <img src={settings} alt="settings icon" />
-              Настройки
+              {t("header.settings")}
             </Button>
             <Button onClick={handleClick}>
-              <span className="w-full sm:w-[150px]">Выбрать тематику</span>
+              <span className="w-full sm:w-[150px]">
+                {t("header.selectTheme")}
+              </span>
               <span className="text-[#A7C4F2] ml-2">T</span>
             </Button>
           </div>

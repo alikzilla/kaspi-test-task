@@ -1,1 +1,49 @@
-{}
+{
+  "header": {
+    "profile": "Профиль",
+    "hide": "Скрыть",
+    "show": "Показать",
+    "birthday": "18.04.1994, 30 лет",
+    "city": "Алматы",
+    "status": "Неактивен",
+    "settings": "Настройки",
+    "selectTheme": "Выбрать тематику"
+  },
+  "navbar": {
+    "shop": "Магазин",
+    "accounts": "Счета",
+    "deposits": "Депозиты",
+    "redAndKredit": "Red и Kredit",
+    "installmentPlan": "Рассрочка",
+    "messages": "Сообщения"
+  },
+  "sidebar": {
+    "title": "ИП LIVERPOOL",
+    "home": "Главная",
+    "orders": "Заказы",
+    "delivery": "Моя Доставка",
+    "products": "Товары"
+  },
+  "shop": {
+    "title": "Магазин",
+    "name": "ИП Liverpool",
+    "active": "Активен",
+    "cashbox": "Касса",
+    "connected": "Подключена",
+    "metrics": "Показатели качества",
+    "ratings": "144 оценок",
+    "cancellations": "Доля отмен",
+    "delivery": "Доставка",
+    "pickup": "Самовывоз",
+    "myDelivery": "Моя доставка",
+    "express": "Экспресс-доставка",
+    "ordersTitle": "Заказы",
+    "inputPlaceholder": "Введите название товара",
+    "loading": "Загрузка...",
+    "notFound": "Заказов не найдено"
+  },
+  "orderModal": {
+    "order": "Заказ",
+    "items": "Товары:"
+  }
+}

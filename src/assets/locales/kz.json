@@ -1,3 +1,49 @@
 {
-  
+  "header": {
+    "profile": "Профиль",
+    "hide": "Жасыру",
+    "show": "Көрсету",
+    "birthday": "18.04.1994, 30 жас",
+    "city": "Алматы",
+    "status": "Белсенді емес",
+    "settings": "Баптаулар",
+    "selectTheme": "Тақырыпты таңдау"
+  },
+  "navbar": {
+    "shop": "Дүкен",
+    "accounts": "Шоттар",
+    "deposits": "Депозиттер",
+    "redAndKredit": "Red және Kredit",
+    "installmentPlan": "Бөліп төлеу",
+    "messages": "Хабарламалар"
+  },
+  "sidebar": {
+    "title": "ЖК LIVERPOOL",
+    "home": "Басты бет",
+    "orders": "Тапсырыстар",
+    "delivery": "Менің жеткізуім",
+    "products": "Өнімдер"
+  },
+  "shop": {
+    "title": "Дүкен",
+    "name": "ЖК Liverpool",
+    "active": "Белсенді",
+    "cashbox": "Касса",
+    "connected": "Қосылған",
+    "metrics": "Сапа көрсеткіштері",
+    "ratings": "144 баға",
+    "cancellations": "Бас тарту үлесі",
+    "delivery": "Жеткізу",
+    "pickup": "Өздігінен алып кету",
+    "myDelivery": "Менің жеткізуім",
+    "express": "Экспресс-жеткізу",
+    "ordersTitle": "Тапсырыстар",
+    "inputPlaceholder": "Тауардың атауын енгізіңіз",
+    "loading": "Жүктелуде...",
+    "notFound": "Тапсырыстар табылмады"
+  },
+  "orderModal": {
+    "order": "Тапсырыс",
+    "items": "Өнімдер:"
+  }
 }

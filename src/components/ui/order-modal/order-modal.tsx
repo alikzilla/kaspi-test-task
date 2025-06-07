@@ -1,4 +1,5 @@
 import { FC, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Order } from "../../../core/types/order";
 import Badge from "../badge/badge";
 import Button from "../button/button";
@@ -10,6 +11,8 @@ interface OrderModalProps {
 }
 
 const OrderModal: FC<OrderModalProps> = ({ isOpen, onClose, order }) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -39,13 +42,13 @@ const OrderModal: FC<OrderModalProps> = ({ isOpen, onClose, order }) => {
 
         <div className="mb-2">
           <h2 className="text-xl font-bold mb-2">
-            Заказ № {order.orderNumber}
+            {t("orderModal.order")} № {order.orderNumber}
           </h2>
           <Badge title={order.status.title} type={order.status.type} />
         </div>
 
         <div>
-          <h3 className="font-semibold mb-2">Товары:</h3>
+          <h3 className="font-semibold mb-2">{t("orderModal.items")}</h3>
           <ul className="list-disc pl-4 text-sm text-gray-700 space-y-1">
             {order.items.map((item, index) => (
               <li key={index}>{item}</li>

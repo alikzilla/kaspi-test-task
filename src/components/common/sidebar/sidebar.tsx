@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 import { shevronDown } from "../../../assets/icons";
 
 interface NavItemProps {
@@ -7,45 +8,20 @@ interface NavItemProps {
   url: string;
 }
 
-const navItems: NavItemProps[] = [
-  {
-    title: "Главная",
-    url: "/shop",
-  },
-  {
-    title: "Заказы",
-    url: "/shop/orders",
-  },
-  {
-    title: "Моя Доставка",
-    url: "/shop/delivery",
-  },
-  {
-    title: "Товары",
-    url: "/shop/products",
-  },
-];
-
-const NavItem = ({ item }: { item: NavItemProps }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  return (
-    <button
-      className={`${
-        location.pathname === item.url ? "text-red-500 font-bold" : ""
-      }`}
-      onClick={() => navigate(item.url)}
-    >
-      {item.title}
-    </button>
-  );
-};
-
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const navItems: NavItemProps[] = [
+    { title: t("sidebar.home"), url: "/shop" },
+    { title: t("sidebar.orders"), url: "/shop/orders" },
+    { title: t("sidebar.delivery"), url: "/shop/delivery" },
+    { title: t("sidebar.products"), url: "/shop/products" },
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -94,13 +70,21 @@ const Sidebar = () => {
         }`}
       >
         <h1 className="flex items-center gap-2 font-bold">
-          <span>ИП LIVERPOOL</span>
+          <span>{t("sidebar.title")}</span>
           <img src={shevronDown} alt="shevron down" className="w-4 h-4" />
         </h1>
 
         <nav className="flex flex-col items-start justify-start gap-5">
           {navItems.map((item, index) => (
-            <NavItem key={index} item={item} />
+            <button
+              key={index}
+              className={`${
+                location.pathname === item.url ? "text-red-500 font-bold" : ""
+              }`}
+              onClick={() => navigate(item.url)}
+            >
+              {item.title}
+            </button>
           ))}
         </nav>
       </aside>
