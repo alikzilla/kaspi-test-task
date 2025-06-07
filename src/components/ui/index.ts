@@ -4,5 +4,6 @@ import Card from "./card/card";
 import Badge from "./badge/badge";
 import RadioGroup from "./radio-group/radio-group";
 import OrderItem from "./order-item/order-item";
+import OrderModal from "./order-modal/order-modal";
 
-export { Button, Input, Card, Badge, RadioGroup, OrderItem };
+export { Button, Input, Card, Badge, RadioGroup, OrderItem, OrderModal };
