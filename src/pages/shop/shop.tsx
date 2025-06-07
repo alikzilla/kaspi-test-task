@@ -9,7 +9,7 @@ const Shop = () => {
   const { t } = useTranslation();
   const [orderItems, setOrderItems] = useState<string>("");
   const [orders, setOrders] = useState<Order[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data/orders.json`)

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Card } from "../../ui";
 import Navbar from "../navbar/navbar";
@@ -7,10 +7,12 @@ import { settings, unavailable, user } from "../../../assets/icons";
 import LanguageSelector from "../language-selector/language-selector";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { t } = useTranslation();
 
-  const handleClick = () => console.log("Click");
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("Click");
+  };
 
   return (
     <header>
@@ -52,11 +54,11 @@ const Header = () => {
           </Card>
 
           <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
-            <Button variant="secondary" onClick={handleClick}>
+            <Button variant="secondary" onClick={() => handleClick}>
               <img src={settings} alt="settings icon" />
               {t("header.settings")}
             </Button>
-            <Button onClick={handleClick}>
+            <Button onClick={() => handleClick}>
               <span className="w-full sm:w-[150px]">
                 {t("header.selectTheme")}
               </span>
