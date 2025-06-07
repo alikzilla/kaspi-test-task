@@ -1,0 +1,42 @@
+[
+  {
+    "orderNumber": "412345678",
+    "items": ["Advanti T02-C03 универсальный красный, черный"],
+    "status": {
+      "title": "Выдан",
+      "type": "OK"
+    }
+  },
+  {
+    "orderNumber": "412345679",
+    "items": ["iPhone 14 Pro Max 256GB", "Чехол прозрачный"],
+    "status": {
+      "title": "Отменён",
+      "type": "BAD"
+    }
+  },
+  {
+    "orderNumber": "412345680",
+    "items": ["Samsung Galaxy A54", "Наушники Galaxy Buds 2"],
+    "status": {
+      "title": "В обработке",
+      "type": "OK"
+    }
+  },
+  {
+    "orderNumber": "412345681",
+    "items": ["Блендер Bosch 600W"],
+    "status": {
+      "title": "Ошибка оплаты",
+      "type": "BAD"
+    }
+  },
+  {
+    "orderNumber": "412345682",
+    "items": ["Ноутбук Asus Vivobook 15", "Мышка Logitech"],
+    "status": {
+      "title": "Готов к выдаче",
+      "type": "OK"
+    }
+  }
+]
