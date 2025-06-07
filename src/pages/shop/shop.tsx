@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Button, Card, Input, OrderItem } from "../../components/ui";
-
-import { percent, settings, starHalf } from "../../assets/icons";
 import { Order } from "../../core/types/order";
 
-const Shop = () => {
-  const [orderNumber, setOrderNumber] = useState<string | undefined>();
+import { percent, settings, starHalf } from "../../assets/icons";
 
+const Shop = () => {
+  const [orderItems, setOrderItems] = useState<string>("");
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,23 +22,27 @@ const Shop = () => {
       });
   }, []);
 
-  if (loading) return <p>Загрузка...</p>;
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log("Click");
   };
 
-  const handleOrderNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOrderNumber(e.target.value);
+  const handleOrderItems = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrderItems(e.target.value);
   };
 
+  const filteredOrders = orders.filter((order) =>
+    order.items.some((item) =>
+      item.toLowerCase().includes(orderItems.toLowerCase())
+    )
+  );
+
   return (
-    <section className="flex flex-col gap-5">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="w-[250px] flex flex-col items-start justify-start gap-[18px]">
+    <section className="w-full md:w-[800px] max-w-screen-lg flex flex-col gap-5 px-4 md:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[25px]">
+        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <div className="w-full flex items-center justify-between">
             <h2 className="font-bold">Магазин</h2>
-            <Button variant="icon" onClick={() => handleClick}>
+            <Button variant="icon" onClick={handleClick}>
               <img src={settings} alt="settings icon" />
             </Button>
           </div>
@@ -47,16 +50,14 @@ const Shop = () => {
             <p className="font-medium">ИП Liverpool</p>
             <Badge title="Активен" type="OK" />
           </div>
-
           <div className="w-full flex items-center justify-between">
             <p className="font-medium">Касса</p>
             <Badge title="Подключена" type="OK" />
           </div>
         </Card>
 
-        <Card className="w-[250px] flex flex-col items-start justify-start gap-[18px]">
+        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <h2 className="font-bold">Показатели качества</h2>
-
           <div className="flex item-start gap-8">
             <div className="flex flex-col items-start justify-start gap-2">
               <div className="flex items-start gap-[2px]">
@@ -65,7 +66,6 @@ const Shop = () => {
               </div>
               <p className="text-sm text-gray-600 mb-2">144 оценок</p>
             </div>
-
             <div className="flex flex-col items-start justify-start gap-2">
               <div className="flex items-start gap-[2px]">
                 <span className="text-xl font-bold">4.2</span>
@@ -76,33 +76,39 @@ const Shop = () => {
           </div>
         </Card>
 
-        <Card className="w-[250px] flex flex-col items-start justify-start gap-2">
+        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <h2 className="font-bold">Доставка</h2>
           <ul className="text-sm text-[#757575] space-y-[6px]">
-            <li>Самовывоз</li>
-            <li>Моя доставка</li>
-            <li>Экспресс-доставка</li>
+            <li className="w-auto cursor-pointer transition-all duration-100 hover:text-gray-900">
+              Самовывоз
+            </li>
+            <li className="w-auto cursor-pointer transition-all duration-100 hover:text-gray-900">
+              Моя доставка
+            </li>
+            <li className="w-auto cursor-pointer transition-all duration-100 hover:text-gray-900">
+              Экспресс-доставка
+            </li>
           </ul>
         </Card>
       </div>
 
-      <Card className="p-6">
-        <h1 className="text-2xl font-bold mb-4">Заказы</h1>
+      <Card className="w-full p-4 md:p-6">
+        <h1 className="text-xl md:text-2xl font-bold mb-4">Заказы</h1>
 
         <div className="mb-4">
-          <div className="relative w-full">
-            <Input
-              type="text"
-              placeholder="Введите номер заказа"
-              onChange={handleOrderNumber}
-            />
-          </div>
+          <Input
+            type="text"
+            placeholder="Введите название товара"
+            value={orderItems}
+            onChange={handleOrderItems}
+            className="w-full"
+          />
         </div>
 
         {loading ? (
-          <p>Загрузка</p>
-        ) : (
-          orders.map((order, index) => (
+          <p>Загрузка...</p>
+        ) : filteredOrders.length > 0 ? (
+          filteredOrders.map((order, index) => (
             <OrderItem
               key={index}
               orderNumber={order.orderNumber}
@@ -110,6 +116,8 @@ const Shop = () => {
               status={order.status}
             />
           ))
+        ) : (
+          <p className="text-sm text-gray-500">Заказов не найдено</p>
         )}
       </Card>
     </section>

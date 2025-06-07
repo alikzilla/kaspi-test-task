@@ -36,26 +36,31 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isActive = location.pathname.startsWith(item.url);
+
   return (
     <button
-      className={`py-3 px-[18px] flex items-center justify-center ${
-        location.pathname.startsWith(item.url)
-          ? "text-red-500 border-b-2 border-red-500"
-          : "text-gray-500"
+      className={`relative py-2 px-4 text-sm md:text-base ${
+        isActive ? "text-red-500" : "text-gray-500"
       }`}
       onClick={() => navigate(item.url)}
     >
       {item.title}
+      {isActive && (
+        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-red-500" />
+      )}
     </button>
   );
 };
 
 const Navbar = () => {
   return (
-    <nav className="h-[52px] px-10 flex items-center">
-      {navItems.map((item, index) => (
-        <NavItem key={index} item={item} />
-      ))}
+    <nav className="w-full h-auto md:h-[52px] px-4 md:px-10 overflow-x-auto whitespace-nowrap no-scrollbar">
+      <div className="flex flex-nowrap gap-2 md:gap-0 items-center min-w-max">
+        {navItems.map((item, index) => (
+          <NavItem key={index} item={item} />
+        ))}
+      </div>
     </nav>
   );
 };

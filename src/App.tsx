@@ -4,30 +4,35 @@ import { Shop } from "./pages";
 
 function App() {
   return (
-    <div>
+    <div className="h-screen flex flex-col">
       <Header />
 
-      <section className="py-8 px-10 flex items-start justify-start gap-5">
+      <div className="md:pl-10 flex flex-1 overflow-hidden pt-8">
         <Sidebar />
 
-        <Routes>
-          <Route path="/" element={<Navigate to="/shop" replace />} />
+        <main className="flex-1 overflow-y-auto pb-10">
+          <Routes>
+            <Route path="/" element={<Navigate to="/shop" replace />} />
 
-          <Route path="shop" element={<Shop />} />
-          <Route path="shop/orders" element={<div>Orders Page</div>} />
-          <Route path="shop/delivery" element={<div>Delivery Info</div>} />
-          <Route path="shop/products" element={<div>Product List</div>} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="shop/orders" element={<div>Orders Page</div>} />
+            <Route path="shop/delivery" element={<div>Delivery Info</div>} />
+            <Route path="shop/products" element={<div>Product List</div>} />
 
-          <Route path="bills" element={<div>Bills Page</div>} />
-          <Route path="accounts" element={<div>Accounts Page</div>} />
-          <Route path="deposits" element={<div>Deposits Page</div>} />
-          <Route path="redAndKredit" element={<div>Red & Kredit</div>} />
-          <Route path="installmentPlan" element={<div>Installment Plan</div>} />
-          <Route path="messages" element={<div>Messages</div>} />
+            <Route path="bills" element={<div>Bills Page</div>} />
+            <Route path="accounts" element={<div>Accounts Page</div>} />
+            <Route path="deposits" element={<div>Deposits Page</div>} />
+            <Route path="redAndKredit" element={<div>Red & Kredit</div>} />
+            <Route
+              path="installmentPlan"
+              element={<div>Installment Plan</div>}
+            />
+            <Route path="messages" element={<div>Messages</div>} />
 
-          <Route path="*" element={<div>Page not found</div>} />
-        </Routes>
-      </section>
+            <Route path="*" element={<div>Page not found</div>} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
