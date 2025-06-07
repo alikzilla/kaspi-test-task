@@ -39,7 +39,7 @@ const Shop = () => {
   return (
     <section className="w-full md:w-[800px] max-w-screen-lg flex flex-col gap-5 px-4 md:px-0">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[25px]">
-        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
+        <Card className="w-full md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <div className="w-full flex items-center justify-between">
             <h2 className="font-bold">Магазин</h2>
             <Button variant="icon" onClick={handleClick}>
@@ -56,7 +56,7 @@ const Shop = () => {
           </div>
         </Card>
 
-        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
+        <Card className="w-full md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <h2 className="font-bold">Показатели качества</h2>
           <div className="flex item-start gap-8">
             <div className="flex flex-col items-start justify-start gap-2">
@@ -76,7 +76,7 @@ const Shop = () => {
           </div>
         </Card>
 
-        <Card className="w-full max-w-[350px] md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
+        <Card className="w-full md:w-[250px] flex flex-col items-start justify-start gap-[18px]">
           <h2 className="font-bold">Доставка</h2>
           <ul className="text-sm text-[#757575] space-y-[6px]">
             <li className="w-auto cursor-pointer transition-all duration-100 hover:text-gray-900">

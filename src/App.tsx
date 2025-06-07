@@ -1,13 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Header, Sidebar } from "./components/common";
 import { Shop } from "./pages";
-import { useTranslation } from "react-i18next";
 
 function App() {
-  const { i18n } = useTranslation();
-
-  console.log(i18n.language);
-
   return (
     <div className="h-screen flex flex-col">
       <Header />

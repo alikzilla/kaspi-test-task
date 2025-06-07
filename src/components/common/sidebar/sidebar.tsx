@@ -49,7 +49,6 @@ const Sidebar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if click is outside both sidebar and toggle button
       if (
         sidebarRef.current &&
         !sidebarRef.current.contains(event.target as Node) &&
