@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.679d09ab.css",
-    "main.js": "/static/js/main.22305e91.js",
-    "static/js/453.a5d7e7dd.chunk.js": "/static/js/453.a5d7e7dd.chunk.js",
-    "static/media/settings.svg": "/static/media/settings.c45c399241d250023b7426c4a7a0cbc8.svg",
-    "static/media/percent.svg": "/static/media/percent.32a0c5b711aa08e10376b9107f6a0f11.svg",
-    "static/media/user.svg": "/static/media/user.423e6f0803cf8de19bad96f827be731e.svg",
-    "static/media/unavailable.svg": "/static/media/unavailable.9365297ef56ae73e69c75955ea78000c.svg",
-    "index.html": "/index.html",
-    "static/media/search.svg": "/static/media/search.03117d22ac0b92afd5c98feb425091cf.svg",
-    "static/media/shevron-down.svg": "/static/media/shevron-down.a1bad8b08bc5219208709692ea2ac2ed.svg",
-    "main.679d09ab.css.map": "/static/css/main.679d09ab.css.map",
-    "main.22305e91.js.map": "/static/js/main.22305e91.js.map",
-    "453.a5d7e7dd.chunk.js.map": "/static/js/453.a5d7e7dd.chunk.js.map"
+    "main.css": "/kaspi-test-task/static/css/main.679d09ab.css",
+    "main.js": "/kaspi-test-task/static/js/main.84301257.js",
+    "static/js/453.a5d7e7dd.chunk.js": "/kaspi-test-task/static/js/453.a5d7e7dd.chunk.js",
+    "static/media/settings.svg": "/kaspi-test-task/static/media/settings.c45c399241d250023b7426c4a7a0cbc8.svg",
+    "static/media/percent.svg": "/kaspi-test-task/static/media/percent.32a0c5b711aa08e10376b9107f6a0f11.svg",
+    "static/media/user.svg": "/kaspi-test-task/static/media/user.423e6f0803cf8de19bad96f827be731e.svg",
+    "static/media/unavailable.svg": "/kaspi-test-task/static/media/unavailable.9365297ef56ae73e69c75955ea78000c.svg",
+    "index.html": "/kaspi-test-task/index.html",
+    "static/media/search.svg": "/kaspi-test-task/static/media/search.03117d22ac0b92afd5c98feb425091cf.svg",
+    "static/media/shevron-down.svg": "/kaspi-test-task/static/media/shevron-down.a1bad8b08bc5219208709692ea2ac2ed.svg",
+    "main.679d09ab.css.map": "/kaspi-test-task/static/css/main.679d09ab.css.map",
+    "main.84301257.js.map": "/kaspi-test-task/static/js/main.84301257.js.map",
+    "453.a5d7e7dd.chunk.js.map": "/kaspi-test-task/static/js/453.a5d7e7dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.679d09ab.css",
-    "static/js/main.22305e91.js"
+    "static/js/main.84301257.js"
   ]
 }
