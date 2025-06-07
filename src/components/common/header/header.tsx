@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header>
-      <section className="w-full bg-[#F2F2F2] px-4 md:px-10 pt-3 flex flex-col md:flex-row gap-4 items-start justify-between relative">
+      <section className="w-full relative bg-[#F2F2F2] px-4 pt-4 md:px-10 md:py-6 flex flex-col md:flex-row items-start justify-between gap-4">
         <div className="md:hidden w-full mb-2 flex justify-between items-center">
           <h2 className="font-bold text-lg">Профиль</h2>
           <button
@@ -23,8 +23,8 @@ const Header = () => {
         </div>
 
         <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out w-full md:flex md:flex-row md:gap-4 ${
-            isOpen ? "max-h-[500px] mb-4" : "max-h-0 mb-0"
+          className={`overflow-hidden transition-all duration-500 ease-in-out w-full md:flex md:flex-row md:justify-between md:gap-4 ${
+            isOpen ? "max-h-[600px] mb-4" : "max-h-0 mb-0"
           } md:max-h-full md:mb-0`}
         >
           <Card className="flex flex-col gap-3 w-full md:w-auto mb-4 md:mb-0">

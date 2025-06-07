@@ -12,8 +12,8 @@ interface ButtonProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "px-4 py-2 bg-[#0075CA] text-white hover:bg-[#0062aa]",
-  secondary: "px-4 py-2 bg-tansparent text-[#8F8F8F] hover:bg-gray-200",
+  primary: "h-[50px] px-4 py-2 bg-[#0075CA] text-white hover:bg-[#0062aa]",
+  secondary: "h-[50px] px-4 py-2 bg-tansparent text-[#8F8F8F] hover:bg-gray-200",
   icon: "bg-transparent text-[#0075CA] p-2 hover:bg-gray-100",
 };
 
