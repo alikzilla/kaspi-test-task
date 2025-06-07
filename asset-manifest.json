@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kaspi-test-task/static/css/main.712c9796.css",
-    "main.js": "/kaspi-test-task/static/js/main.6004fa1e.js",
+    "main.css": "/kaspi-test-task/static/css/main.bbd586c4.css",
+    "main.js": "/kaspi-test-task/static/js/main.04e4d392.js",
     "static/js/453.a5d7e7dd.chunk.js": "/kaspi-test-task/static/js/453.a5d7e7dd.chunk.js",
     "static/media/settings.svg": "/kaspi-test-task/static/media/settings.c45c399241d250023b7426c4a7a0cbc8.svg",
     "static/media/percent.svg": "/kaspi-test-task/static/media/percent.32a0c5b711aa08e10376b9107f6a0f11.svg",
@@ -10,12 +10,12 @@
     "index.html": "/kaspi-test-task/index.html",
     "static/media/search.svg": "/kaspi-test-task/static/media/search.03117d22ac0b92afd5c98feb425091cf.svg",
     "static/media/shevron-down.svg": "/kaspi-test-task/static/media/shevron-down.a1bad8b08bc5219208709692ea2ac2ed.svg",
-    "main.712c9796.css.map": "/kaspi-test-task/static/css/main.712c9796.css.map",
-    "main.6004fa1e.js.map": "/kaspi-test-task/static/js/main.6004fa1e.js.map",
+    "main.bbd586c4.css.map": "/kaspi-test-task/static/css/main.bbd586c4.css.map",
+    "main.04e4d392.js.map": "/kaspi-test-task/static/js/main.04e4d392.js.map",
     "453.a5d7e7dd.chunk.js.map": "/kaspi-test-task/static/js/453.a5d7e7dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.712c9796.css",
-    "static/js/main.6004fa1e.js"
+    "static/css/main.bbd586c4.css",
+    "static/js/main.04e4d392.js"
   ]
 }
